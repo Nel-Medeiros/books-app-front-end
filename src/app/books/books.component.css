@@ -1,0 +1,57 @@
+/* .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  } */
+
+  .cards {
+    margin: 0 auto;
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;        
+}
+
+.card {
+    width: 200px;
+}
+
+.card:hover {
+  -webkit-box-shadow: -1px 8px 40px -13px rgba(0,0,0,0.93);
+  -moz-box-shadow: -1px 8px 40px -13px rgba(0,0,0,0.93);
+  box-shadow: -1px 8px 40px -13px rgba(0,0,0,0.93);
+}
+
+.paginator-bar {
+  position: sticky;
+  top: 3.5rem;
+  z-index: 10;
+}
+
+mat-card-header {
+    height: 100px;
+}
+
+.books-head {
+display: flex;
+margin-left: 3rem;
+color:#878787;
+}
+.books-head mat-icon {
+font-size: 4rem;    
+}
+
+.books-head h1 {
+font-size: 2rem; 
+margin-left: 3rem;
+margin-top: 1rem;
+}
+
+.add-book-btn {
+  margin-left: 3rem;
+}
+

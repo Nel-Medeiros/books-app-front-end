@@ -1,0 +1,46 @@
+<mat-paginator class="paginator-bar" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+<div class="books-head">
+    <mat-icon aria-hidden="false" aria-label="camera icon">menu_book</mat-icon>
+    <h1>Books</h1>    
+</div>
+<div class="add-book-btn">
+    <button (click)="addDialog()" type="button" mat-raised-button color="basic">
+        Add Book
+    </button>
+</div>
+<div class="cards" style="padding: 13px;">
+    <!-- <mat-spinner *ngIf="obs.length === 0"></mat-spinner> -->
+    <mat-card class="card" *ngFor="let book of obs | async" style="margin-top:11px;">
+        <mat-card-header>
+            <mat-card-title>{{book.name}}</mat-card-title>
+            <mat-card-subtitle>{{book.genre}}</mat-card-subtitle>
+        </mat-card-header>
+        <img style="height:200px; width: 100%;"
+            src="https://www.freemockupworld.com/wp-content/uploads/2019/12/Free-Book-Cover-Mockup-PSD.jpg" />
+        <mat-card-content>
+            <h3>Sinopse</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id libero magna. Ut id sollicitudin
+                risus. Nulla volutpat auctor suscipit. Duis nisi metus, suscipit non hendrerit sed, ultricies sit amet
+                felis. Nunc molestie, justo sed dapibus ullamcorper, nisl enim egestas nunc, sed auctor eros tortor eu
+                purus.
+            </p>
+            <h3>Author</h3>
+            <p>{{book.author.name}}</p>
+            <p>{{book.author.age}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="openDialog(book.name, book.author, book.genre)" mat-fab color="primary"
+                aria-label="details button">
+                <mat-icon>library_books</mat-icon>
+            </button>
+            <button (click)="updtDialog(book._id, book.name, book.author, book.genre)" mat-fab color="accent"
+                aria-label="edit button">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteBook(book._id)" mat-fab color="warn" aria-label="delete button">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

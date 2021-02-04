@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  mat-form-field {
+    margin-bottom: -30px;
+  }
+
+  .form-input {
+    margin-top: 30px;
+  }
+
+  .input-validation-message {
+    font-size: 12px;
+    color: red;
+  }
+
+  .add-button:hover {
+    background-color: #5d71e3;
+  }
