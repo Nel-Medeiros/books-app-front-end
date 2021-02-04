@@ -1,7 +1,6 @@
 :host {
     display: flex;
     justify-content: center;
-    margin: 100px 0px;
   }
 
   .mat-form-field {
@@ -35,4 +34,8 @@
 
   .add-button:hover {
     background-color: #5d71e3;
+  }
+
+  .hide-button {
+      display: none;
   }

@@ -1,8 +1,4 @@
-import { BookFormDialogComponent } from './../book-form-dialog/book-form-dialog.component';
-import { AddBookDialogDataComponent } from './../add-book-dialog-data/add-book-dialog-data.component';
-import { UpdateDialogDataComponent } from './../update-dialog-data/update-dialog-data.component';
 import { Router } from '@angular/router';
-import { BookFormComponent } from './../book-form/book-form.component';
 import { Observable } from 'rxjs';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -10,9 +6,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Book } from './book';
+import { Author } from './author';
 import { BooksService } from './../services/books-service/books.service';
 import { DialogDataComponent } from './../dialog-data/dialog-data.component';
-import { Author } from './author';
+import { BookFormDialogComponent } from './../book-form-dialog/book-form-dialog.component';
 
 @Component({
   selector: 'app-books',
@@ -53,11 +50,6 @@ export class BooksComponent implements OnInit, AfterViewInit {
     console.log(bookId);
   }
 
-  public updtBook(bookId: string) {
-    console.log(bookId);
-    this.router.navigate(['/update-book/' + bookId]);
-  }
-
   openDialog(name: string, author: Author, genre: string) {
     name = name;
     author = author;
@@ -71,7 +63,7 @@ export class BooksComponent implements OnInit, AfterViewInit {
     });
   }
 
-  updtDialog(_id: string, name: string, author: Author, genre: string) {
+  updtBookDialog(_id: string, name: string, author: Author, genre: string) {
     _id = _id;
     name = name;
     author = author;
@@ -86,7 +78,7 @@ export class BooksComponent implements OnInit, AfterViewInit {
     });
   }
 
-  addDialog() {
+  addBookDialog() {
     this.dialog.open(BookFormDialogComponent);
   }
 

@@ -16,11 +16,16 @@ export class BookFormDialogComponent implements OnInit {
 
   bookForm: FormGroup;
 
+  dialogTitle: string;
+  isUpdate: boolean;
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: Book, public dialogRef: MatDialogRef<BookFormDialogComponent>, private formBuilder: FormBuilder, private booksService: BooksService, private router: Router) { }
 
   ngOnInit(): void {
 
     if (this.data == null) {
+      this.dialogTitle = 'Add Book';
+      this.isUpdate = false;
       this.bookForm = this.formBuilder.group({
         bookName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
         authorName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]),
@@ -28,6 +33,8 @@ export class BookFormDialogComponent implements OnInit {
         genre: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)])
       });
     } else {
+      this.dialogTitle = 'Update Book';
+      this.isUpdate = true;
       this.bookForm = this.formBuilder.group({
         bookName: new FormControl(this.data.name, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
         authorName: new FormControl(this.data.author.name, [Validators.required, Validators.minLength(3), Validators.maxLength(40)]),

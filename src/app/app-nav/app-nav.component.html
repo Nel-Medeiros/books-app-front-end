@@ -4,8 +4,7 @@
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item [routerLink]="['/login']" (click)="drawer.toggle()">Home</a>
-            <a mat-list-item [routerLink]="['/books']" (click)="drawer.toggle()">Books</a>
-            <a mat-list-item [routerLink]="['/add-book']" (click)="drawer.toggle()">Add Book</a>
+            <a mat-list-item [routerLink]="['/books']" (click)="drawer.toggle()">Books</a>            
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -17,8 +16,7 @@
             <span>My Virtual Shelf</span>
             <span class="spacer"></span>
             <a *ngIf="!(isHandset$ | async)" [routerLink]="['/login']">Home</a>
-            <a *ngIf="!(isHandset$ | async)" [routerLink]="['/books']">Books</a>
-            <a *ngIf="!(isHandset$ | async)" [routerLink]="['/add-book']">Add Book</a>
+            <a *ngIf="!(isHandset$ | async)" [routerLink]="['/books']">Books</a>            
         </mat-toolbar>
         <!-- Add Content Here -->
         <ng-content></ng-content>

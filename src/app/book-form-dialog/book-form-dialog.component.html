@@ -1,5 +1,5 @@
 <form [formGroup]="bookForm" (ngSubmit)="addBook()">
-    <h1>Book Update</h1>
+    <h1>{{dialogTitle}}</h1>
     <hr>
     <!-- INPUT TO bookName -->
     <p>
@@ -90,10 +90,10 @@
     <!-- END INPUT TO genre -->
 
     <div class="button">
-        <button [ngClass]="{'add-button' : bookForm.valid}" type="submit" [disabled]="!bookForm.valid" mat-raised-button
+        <button [ngClass]="{'hide-button' : isUpdate}" type="submit" [disabled]="!bookForm.valid" mat-raised-button
             color="accent">Add Book
         </button>
-        <button (click)="updtBook(data._id)" [ngClass]="{'add-button' : bookForm.valid}" type="button" [disabled]="!bookForm.valid" mat-raised-button
+        <button (click)="updtBook(data._id)" [ngClass]="{'hide-button' : !isUpdate}" type="button" [disabled]="!bookForm.valid" mat-raised-button
             color="accent">Update Book
         </button>
     </div>

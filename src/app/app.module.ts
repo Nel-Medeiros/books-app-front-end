@@ -20,10 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { BooksComponent } from './books/books.component';
-import { BookFormComponent } from './book-form/book-form.component';
 import { DialogDataComponent } from './dialog-data/dialog-data.component';
-import { UpdateDialogDataComponent } from './update-dialog-data/update-dialog-data.component';
-import { AddBookDialogDataComponent } from './add-book-dialog-data/add-book-dialog-data.component';
 import { BookFormDialogComponent } from './book-form-dialog/book-form-dialog.component';
 
 @NgModule({
@@ -31,10 +28,7 @@ import { BookFormDialogComponent } from './book-form-dialog/book-form-dialog.com
     AppComponent,
     AppNavComponent,
     BooksComponent,
-    BookFormComponent,
     DialogDataComponent,
-    UpdateDialogDataComponent,
-    AddBookDialogDataComponent,
     BookFormDialogComponent
   ],
   imports: [

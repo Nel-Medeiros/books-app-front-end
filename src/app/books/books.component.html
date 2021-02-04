@@ -4,7 +4,7 @@
     <h1>Books</h1>    
 </div>
 <div class="add-book-btn">
-    <button (click)="addDialog()" type="button" mat-raised-button color="basic">
+    <button (click)="addBookDialog()" type="button" mat-raised-button color="basic">
         Add Book
     </button>
 </div>
@@ -17,24 +17,26 @@
         </mat-card-header>
         <img style="height:200px; width: 100%;"
             src="https://www.freemockupworld.com/wp-content/uploads/2019/12/Free-Book-Cover-Mockup-PSD.jpg" />
-        <mat-card-content>
-            <h3>Sinopse</h3>
+        <hr>
+            <mat-card-content>
+            <h3><strong>Sinopse</strong></h3>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id libero magna. Ut id sollicitudin
                 risus. Nulla volutpat auctor suscipit. Duis nisi metus, suscipit non hendrerit sed, ultricies sit amet
                 felis. Nunc molestie, justo sed dapibus ullamcorper, nisl enim egestas nunc, sed auctor eros tortor eu
                 purus.
             </p>
-            <h3>Author</h3>
-            <p>{{book.author.name}}</p>
-            <p>{{book.author.age}}</p>
+            <hr>
+            <h3><strong>Author</strong></h3>
+            <p>Name: {{book.author.name}}</p>
+            <p>Age: {{book.author.age}}</p>
         </mat-card-content>
-        <mat-card-actions>
+        <mat-card-actions class="card-actions">
             <button (click)="openDialog(book.name, book.author, book.genre)" mat-fab color="primary"
                 aria-label="details button">
                 <mat-icon>library_books</mat-icon>
             </button>
-            <button (click)="updtDialog(book._id, book.name, book.author, book.genre)" mat-fab color="accent"
+            <button (click)="updtBookDialog(book._id, book.name, book.author, book.genre)" mat-fab color="accent"
                 aria-label="edit button">
                 <mat-icon>edit</mat-icon>
             </button>
